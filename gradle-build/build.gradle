@@ -31,9 +31,9 @@ android {
     sourceSets {
         main {
 			manifest.srcFile 'AndroidManifest.xml'
-          java.srcDirs = ['src']
+			java.srcDirs = ['src']
 			res.srcDirs = ['res']
-          assets.srcDirs = ['assets']
+			assets.srcDirs = ['assets']
         }
     }
 
@@ -51,10 +51,10 @@ android {
         	zipAlign true
 
         	//proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt' 
-          proguardFile rootProject.file('proguard-project.txt')
+			proguardFile rootProject.file('proguard-project.txt')
 			signingConfig signingConfigs.release
-          applicationVariants.all { variant ->
-          	def file = variant.outputFile
+			applicationVariants.all { variant ->
+          		def file = variant.outputFile
             	variant.outputFile = new File(file.parent, file.name.replace(".apk", "_" + defaultConfig.versionName + "_" + defaultConfig.versionCode + ".apk"))
             }
         }
