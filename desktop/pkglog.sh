@@ -1,3 +1,5 @@
+#!/bin/sh  
+
 pkgname=$1
 pids=$(adb shell ps | grep ${pkgname} | awk '{print $2}')
 pids=$(echo $pids)
